@@ -47,3 +47,40 @@ Scrollbar.destroy(elem);
 // Destroy all scrollbar
 Scrollbar.destroyAll();
 ```
+
+# init after targets
+> init
+```JS
+var elem = document.getElementById('myscroll');
+var target = Scrollbar.init(elem);
+```
+
+> positioning
+```JS
+target.setPosition(0, 100);
+console.log(target.offset); // { x: 0, y: 100 }
+console.log(target.offset.y); // { 100 }
+```
+
+> scrolling for .lastpara class on window load then again scrolling 12 offset from the top
+```JS
+target.scrollIntoView(document.getElementsByClassName('lastpara')[0], {
+    offsetTop: 12
+});
+```
+
+#### Available Options for scrollIntoView()
+
+| Param | Type | Description |
+| --- | :-: | --- |
+| `elem` | Element | Target element. |
+| `options` | object, _optional_ | Scrolling options, see the table below. |
+
+| Property | type | default | description |
+| :-------: | :--: | :-----: | :---------- |
+| `alignToTop` | boolean | `true` | Whether to align to the top or the bottom edge of container. |
+| `offsetTop` | number | `0` | Offset to top edge of container (used only if alignToTop is true). |
+| `offsetLeft` | number | `0` | Offset to left edge of container. |
+| `offsetBottom` | number | `0` | Offset to bottom edge of container (used only if alignToTop is false). |
+| `onlyScrollIfNeeded` | boolean | `false` | Whether to scroll container when target element is visible. |
+
