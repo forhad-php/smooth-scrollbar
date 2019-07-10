@@ -84,3 +84,36 @@ target.scrollIntoView(document.getElementsByClassName('lastpara')[0], {
 | `offsetBottom` | number | `0` | Offset to bottom edge of container (used only if alignToTop is false). |
 | `onlyScrollIfNeeded` | boolean | `false` | Whether to scroll container when target element is visible. |
 
+> scrollIntoView will be fire after 2 sec..
+```JS
+var lastp = document.getElementsByClassName('lastpara')[0];
+var options = {
+        offsetTop: 12,
+        offsetLeft: 34,
+        onlyScrollIfNeeded: true
+    }
+setTimeout(function () { target.scrollIntoView(lastp, options); }, 2000);
+```
+
+> With Click Event Listener
+```JS
+document.getElementById("myBtn").addEventListener("click", scrollToEndClass);
+function scrollToEndClass() {
+    var endp = document.getElementsByClassName('endp')[0];
+    target.scrollIntoView(endp);
+}
+```
+
+#### Project
+> ScrollBar with Default Listener Function.
+```JS
+var x = 0;
+target.addListener(function (status) {
+
+    // Increase/Decrease Color Percentage by Offset
+    x = Math.round((status.offset.y * 100) / status.limit.y);
+    
+    // Add sytle
+    document.getElementById("myscroll").style.backgroundColor = 'hsl(0, 100%, ' + x + '%)';
+});
+```
