@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="smooth-scrollbar.css">
+    <style>
+        #myscroll {
+            width: 300px;
+            height: 350px;
+            overflow: auto;
+            margin: 20px auto;
+            background: hsl(0, 100%, 0%);
+        }
+    </style>
+</head>
+<body>
+    <div id="myscroll" data-scrollbar>
+        <p>
+            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+            feugiat
+            nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
+            augue duis
+            dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+            nibh
+            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        </p>
+        <p>
+            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+            feugiat
+            nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
+            augue duis
+            dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+            nibh
+            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        </p>
+        <p>
+            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+            feugiat
+            nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
+            augue duis
+            dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+            nibh
+            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        </p>
+        <p class="lastpara">
+            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+            consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+            feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
+            augue duis dolore te feugait nulla facilisi.
+
+            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat
+            nulla facilisis.
+        </p>
+        <button id="myBtn">Click</button>
+        <p class="endp">
+            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+            consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+            feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
+            augue duis dolore te feugait nulla facilisi.
+            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+            ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+            labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+            clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt
+            justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum
+            dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+            labore et dolore magna aliquyam erat.
+
+            Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim
+            assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+            dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+            lobortis nisl ut aliquip ex ea commodo consequat.
+        </p>
+    </div>
+
+    <h2 style="text-align: center;">Scrolled <span id="sdemo">0</span>% of 100 of total offset limit</h2>
+
+    <!-- Documentation -->
+    <!-- https://github.com/idiotWu/smooth-scrollbar/tree/7.x#demo -->
+    <script src="smooth-scrollbar.js"></script>
+    <script>
+        /************* init All at once *************/
+        /* Scrollbar.initAll({
+            speed: 1,
+            damping: 0.1,
+            overscrollEffect: 'bounce',
+        }); */
+
+
+
+        /************* init by object *************/
+        /* var options = {
+            speed: 1,
+            damping: 0.1,
+            overscrollEffect: 'glow',
+            overscrollEffectColor: '#87ceeb'
+        };
+        var elem = document.getElementById('myscroll');
+        Scrollbar.init(elem, options); */
+
+
+
+        /************* helper *************/
+        /* var testHas = Scrollbar.has(elem) ? true : false; // true
+        var testGet = Scrollbar.get(document.body) ? true : false; // false
+        console.log({testHas, testGet});
+        // Scrollbar.destroy(elem); // Destroy specific
+        // Scrollbar.destroyAll(); // Destroy all scrollbar */
+
+
+
+          /************************************************/
+         /************* init after targets **************/
+        /**********************************************/
+        var elem = document.getElementById('myscroll');
+        var target = Scrollbar.init(elem);
+
+        // target.setPosition(0, 100);
+        // console.log(target.offset); // { x: 0, y: 100 }
+        // console.log(target.offset.y); // { 100 }
+
+        /* target.scrollIntoView(document.getElementsByClassName('lastpara')[0], {
+            // offsetTop: 12,
+            // offsetLeft: 34,
+            // onlyScrollIfNeeded: true
+        }); */
+
+        var lastp = document.getElementsByClassName('lastpara')[0];
+        var options = {
+                offsetTop: 12,
+                offsetLeft: 34,
+                onlyScrollIfNeeded: true
+            }
+        // scrollIntoView will fire after 2 sec.
+        // setTimeout(function () { target.scrollIntoView(lastp, options); }, 2000);
+
+        // javaScript Click Event Listener
+        document.getElementById("myBtn").addEventListener("click", scrollToEndClass);
+        function scrollToEndClass() {
+            var endp = document.getElementsByClassName('endp')[0];
+            target.scrollIntoView(endp);
+        }
+
+        // ScrollBar Default Listener Function
+        var x = 0;
+        target.addListener(function (status) {
+            // Watch the scroll direction up or down
+            // console.log(status.direction.y);
+
+            // Increase/Decrease Color % by Scrolling Up/Down
+            /* if (status.direction.y == 'up') {
+                document.getElementById("sdemo").innerHTML = x < 0 ? 0 : x -= 1;
+                document.getElementById("myscroll").style.backgroundColor = "hsl(290," + x + "%,50%)";
+            } else {
+                document.getElementById("sdemo").innerHTML = x > 100 ? 100 : x += 1;
+                document.getElementById("myscroll").style.backgroundColor = "hsl(290," + x + "%,50%)";
+            } */
+
+            // Increase/Decrease Color Percentage by Offset
+            x = Math.round((status.offset.y * 100) / status.limit.y);
+            document.getElementById("myscroll").style.backgroundColor = 'hsl(0, 100%, ' + x + '%)';
+            document.getElementById("sdemo").innerHTML = x;
+        })
+
+    </script>
+</body>
+</html>
